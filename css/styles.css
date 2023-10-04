@@ -1,5 +1,7 @@
 /* Set the background color of body */
-body { background-color:#F2F0EE; }
+body { background-color:#F2F0EE; 
+    padding-bottom: 5%;
+}
 
 a {
     text-decoration: None;
@@ -33,9 +35,11 @@ a:hover, a:focus {
 
 .roundBox {
     width: 94%;
-    height: 4700px;
+    /* height: 4700px; */
     left: 3%;
     top: 40px;
+    padding-bottom: 5px;
+    margin-bottom: 50px;
     position: relative;
     background: white;
     border-radius: 94px
@@ -45,6 +49,7 @@ a:hover, a:focus {
     top: 69px;
     display: flex;
     position: relative;
+    margin-bottom: 150px;
 }
 
 .pageTitle {
@@ -91,7 +96,7 @@ a:hover, a:focus {
     align-items: center; /* center horizontally */
     justify-content: center; /* center vertically */
     /* top: 180px; */
-    margin-top: 150px;
+    /* margin-top: 150px; */
     position: relative;
     flex-direction: row;
 }
@@ -210,11 +215,11 @@ a:hover, a:focus {
 }
 
 .sectionIntro {
-    font-size: 24px;
+    font-size: 20px;
     font-family: Inter;
     font-weight: 400;
     line-height: 40px;
-    margin-top: 40px;
+    margin-top: 30px;
     margin-right: 5%;
 }
 
@@ -228,7 +233,7 @@ a:hover, a:focus {
 
 .timeline {
     border-left: 2px solid #333;
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 .timelineSection {
@@ -238,12 +243,12 @@ a:hover, a:focus {
 }
 
 .timelineHeader {
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 600;
 }
 
 .currentTimelineHeader {
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 600;
 }
 
@@ -272,13 +277,18 @@ a:hover, a:focus {
     left: -9px;
     border: 3px solid rgb(0, 0, 0);
     background-color: #000000;
+    margin-bottom: 0px;
+    padding-bottom: 0;
 }
 
-.bulletPoint {
-    line-height: 35px; 
-    font-size: 20px;
-    font-weight: 400;
+.timelineContent {
+    margin-top: 0px;
+}
 
+.star {
+    line-height: 24px; 
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .companyName {
@@ -304,6 +314,47 @@ li::before {
     font-size: 36px;   
 }
 
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 0px 1%; /* Spacing between images */
+    margin-left: auto;
+    margin-right: 10%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.image-grid img {
+    width: 100%; /* Makes the image fill the column */
+    height: auto; /* Maintains the image's aspect ratio */
+    margin-bottom: 0;
+
+}
+
+.image-with-text {
+    position: relative; /* This allows absolute positioning within it */
+}
+
+.overlay-text {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    color: black;
+    font-family: "londrina sketch", sans-serif;
+    font-size: 50px;
+    padding-left: 1%;
+    line-height: 1;
+}
+
+.white {
+    color: white;
+}
+
+.selected-text {
+    text-decoration: underline;
+}
+
+
 @media screen and (max-width: 1320px) {
     body { background-color: #ee7e1b;  } 
     .meImg {
@@ -315,6 +366,9 @@ li::before {
     }
     .intro {
         line-height: 5vw;
+    }
+    .overlay-text {
+        font-size: 40px;
     }
 }
 
@@ -334,6 +388,9 @@ li::before {
         width: 12vw;
         font-size: 2vw;
         height: auto;
+    }
+    .overlay-text {
+        font-size: 30px;
     }
     #TA {
         display: inline;
@@ -377,11 +434,66 @@ li::before {
     }
 }
 
+.artCells {
+    margin-top: 50px;
+}
+.row {
+    display: flex;            /* turn the container into a flexbox */
+    justify-content: space-between;  /* space the items out evenly */
+    margin-bottom: 10px;     /* space between rows */
+}
+
+.artContainer{
+    margin-right: 100px;
+    width: calc(50% - 50px); 
+}
+
+.cellHeader {
+    /* width: calc(50% - 10px); */
+    font-family: 'Londrina Sketch', cursive;
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.cell {
+    margin-top: 0;
+    font-family: "linter", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+
+}
+
+.hashPoint {
+    font-size: 20px;
+    font-family: "architects daughter", sans-serif;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    line-height: 1;
+}
+
+
+li.hashPoint::before {
+    content: "#";
+}
 /* On screens that are 768 or less, apply a visible design/ layout change */
 @media screen and (max-width: 768px) {
+    .row {
+        flex-wrap: wrap;
+    }
+    .artContainer {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        /* padding: 0; */
+    }
   body { background-color: #31be96; } 
  
   .currentTimelineHeader {
+    font-size: 20px;
+}
+.overlay-text {
     font-size: 20px;
 }
 .timelineHeader {
@@ -400,6 +512,7 @@ li::before {
     .meImg {
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 30px;
     }
 
     .openingText {
@@ -418,9 +531,11 @@ li::before {
     .greyBoxes1, .greyBoxes2 {
         display: none;
     }
+    .points, .artCells {
+        margin-top: 10px;
+    }
 
 }
-
 
 /* On screens that are 576 or less, apply a visible design/ layout change */
 @media screen and (max-width: 576px) {
@@ -464,14 +579,9 @@ li::before {
         width: 100px;
         height: 200px;
     }
-    .timelineContent {
-        margin-top: 0px;
-    }
-    .bulletPoint {
+   
+    .star {
         font-size: 18px;
-    }
-    .sectionIntro {
-        margin-top: 10px;
     }
     .content {
         margin-top: 60px;
@@ -479,16 +589,57 @@ li::before {
     .timeline {
         margin-top: 20px;
     }
+    .cellHeader {
+        font-size: 20px;
+        margin: 0;
+        line-height: 1;
+    }
+    .cell {
+        font-size: 16px;
+    }
+    .artContainer {
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
     .sectionIntro {
-        font-size: 18px;
+        font-size: 17px;
+        line-height: 24px;
+        padding: 0;
+        margin: 0;
     }
     .sectionHeader {
         font-size : 30px;
+        margin-bottom: 0px;
     }
-    li::before {
+    li.star::before {
         content: "✨";        /* Add apple emoji */
-        margin-right: 5px;    /* Spacing between the emoji and the list item text */
-        font-size: 24px;   
+        font-size: 16px;   
+
     }
+    li.hashPoint {
+        font-size: 16px;
+    }
+    li.hashPoint::brefore {
+        font-size: 16px;
+    }
+    li.star {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    .points {
+        margin-top: 5px;
+    }
+    .timelineSection {
+        margin-bottom: 15px;
+        padding-bottom: 0;
+    }
+    .timelineHeader {
+        margin: 0px;
+    }
+    .timelineContent {
+        margin: 0px;
+    }
+    
+
 }
 

@@ -359,6 +359,9 @@ li::before {
     display: none;
 }
 
+.meSmall {
+    display: none;
+}
 @media screen and (max-width: 1320px) {
     body { background-color: #ee7e1b;  } 
     .meImg {
@@ -579,10 +582,6 @@ li.hashPoint::before {
     margin-top: 100px;
   }
 
-    .meImg {
-        width: 100px;
-        height: 200px;
-    }
    
     .star {
         font-size: 18px;
@@ -696,6 +695,15 @@ li.hashPoint::before {
     .menu-container:hover .dropdown-content {
         display: block;
     }
+    .meImg {
+        display: none;
+    }
+
+    .meSmall {
+        display: block;
+        width: 80%;
+    }
+   
 
 }
 

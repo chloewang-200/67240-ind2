@@ -354,6 +354,10 @@ li::before {
     text-decoration: underline;
 }
 
+/* hamburger icon */
+.menu-container {
+    display: none;
+}
 
 @media screen and (max-width: 1320px) {
     body { background-color: #ee7e1b;  } 
@@ -639,7 +643,59 @@ li.hashPoint::before {
     .timelineContent {
         margin: 0px;
     }
+
+    .menu-container {
+        position: relative;
+        width: 30px;
+        display:flex;
+        margin-left: 42%;
+        margin-right: 10%;
+    }
     
+    .bar {
+        width: 30px;
+        height: 3px;
+        background-color: black;
+        margin: 6px 0;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: -150%;
+        /* margin-left: 42%; */
+        /* margin-right: 400px; */
+        /* background-color: #f9f9f9; */
+        /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+        z-index: 1;
+        font-family: "lintel", sans-serif;
+        
+    }
+    
+    .dropdown-content a {
+        padding: 5px 5px;
+        display: block;
+        background-color: #ffffff;
+        color: black;
+        text-decoration: none;
+        border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        border:solid 2px rgb(0, 0, 0);
+        /* display: flex; */
+        align-items: center;
+        justify-content: center; 
+        margin-left: 10px;
+        font-size: 20px;
+        font-family: 'Architects Daughter', cursive;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #ffc7c7;
+    }
+    
+    .menu-container:hover .dropdown-content {
+        display: block;
+    }
 
 }
 

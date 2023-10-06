@@ -1,16 +1,29 @@
-/* Set the background color of body */
+/* background color */
 body { background-color:#F2F0EE; 
     padding-bottom: 5%;
 }
 
+/* background rounded corner box */
+.roundBox {
+    width: 94%;
+    left: 3%;
+    top: 40px;
+    padding-bottom: 5px;
+    margin-bottom: 50px;
+    position: relative;
+    background: white;
+    border-radius: 94px
+}
+
+/* remove style for all links */
 a {
     text-decoration: None;
     color: black;
 }
 
-
+/* add hover color for introduction texts */
 a:hover, a:focus {
-    text-decoration: underline;  /* Adds underline on hover or focus for better UX */
+    text-decoration: underline;
 }
 
 #hoverOrange:hover{
@@ -30,21 +43,10 @@ a:hover, a:focus {
 }
 
 #hoverPink:hover {
-    color: pink;
+    color: rgb(191, 0, 255);
 }
 
-.roundBox {
-    width: 94%;
-    /* height: 4700px; */
-    left: 3%;
-    top: 40px;
-    padding-bottom: 5px;
-    margin-bottom: 50px;
-    position: relative;
-    background: white;
-    border-radius: 94px
-}
-
+/* the headers and navigation */
 .first {
     top: 69px;
     display: flex;
@@ -54,21 +56,15 @@ a:hover, a:focus {
 
 .pageTitle {
     font-family: Josefin Sans;
-    /* left: 10%; */
-    /* top: 69px; */
-    /* position: absolute; */
     position: relative;
     margin-left: 10%;
     color: black; font-size: 36px; font-family: Josefin Sans; font-weight: 600; word-wrap: break-word
 }
 
 .headerContainer {
-    /* position: absolute; */
     position: relative;
-    /* right: 10%; */
     margin-left: 50%;
     margin-right: 0%;
-    /* top: 69px;  */
     width: 20%;
 }
 
@@ -85,18 +81,15 @@ a:hover, a:focus {
     margin-right: 30%;
 }
 
-/* Remove margin-right for the last child so it doesn't create unnecessary space on the far right */
 .headers > a:last-child {
     margin-right: 0;
 }
 
-
+/* the conttainer for the intro image and texts */
 .center-container {
     display: flex;
-    align-items: center; /* center horizontally */
-    justify-content: center; /* center vertically */
-    /* top: 180px; */
-    /* margin-top: 150px; */
+    align-items: center;
+    justify-content: center;
     position: relative;
     flex-direction: row;
 }
@@ -104,47 +97,33 @@ a:hover, a:focus {
 .meImg {
     height: 500px;
     width: 400px;
-    /* top: 180px; */
     position: relative;
     margin-left: 10%;
     margin-right: 5%;
 }
 .openingText {
-    /* top: 200px; */
     margin-top: 15px;
     margin-right: 5%;
-    /* margin-left: 7%; */
-    /* position: absolute; */
-    /* position: relative; */
+
 }
 
-
+/* intro texts */
 .hello {
-    /* left: 45%;  */
     justify-content: flex-end;
     font-size: 30px;
     top: 5px;
-    /* top: 220px;  */
-    /* position: absolute;  */
     transform: rotate(-6.46deg); 
     transform-origin: 0 0;
     font-family: 'Josefin Slab', serif;
 }
 
-.SWE {
-    display: none;
-}
 .intro {
     left: 10%; 
     max-width: 550px;
     min-width: 200px;
     line-height: 80px;
-    /* justify-content: flex-end; */
     font-size: 45px;
-    /* top: 15%; */
-    /* top: 15px;  */
     margin-top: 8px;
-    /* position: absolute;  */
     transform-origin: 0 0;
     font-family: 'Inter', sans-serif;
     font-weight: 600;
@@ -157,22 +136,18 @@ a:hover, a:focus {
     font-family: 'Londrina Sketch', cursive;
     font-size: 54px;
 }
-
+/* grey boxes for the skills */
 .greyBoxes1{
-    /* top: 820px; */
     right: 7%;
     margin-top: 100px;
-    /* position: absolute; */
     position: relative;
     display: flex;
     justify-content: flex-end;
 }
 
 .greyBoxes2{
-    /* top: 880px; */
     margin-top: 15px;
     right: 13%;
-    /* position: absolute; */
     display: flex;
     position: relative;
     justify-content: flex-end;
@@ -195,6 +170,7 @@ a:hover, a:focus {
     background-color: #ffddec;
 }
 
+/* timeline style */
 .content {
     position: relative;
     margin-top: 100px;
@@ -221,10 +197,6 @@ a:hover, a:focus {
     line-height: 40px;
     margin-top: 30px;
     margin-right: 5%;
-}
-
-#TA {
-    display: none;
 }
 
 .content a {
@@ -291,6 +263,16 @@ a:hover, a:focus {
     font-weight: 400;
 }
 
+/* abbreviation for the titles */
+.SWE {
+    display: none;
+}
+
+
+#TA {
+    display: none;
+}
+
 .companyName {
     display: none;
 }
@@ -304,20 +286,21 @@ a:hover, a:focus {
 }
 
 ul {
-    list-style-type: none; /* Remove default bullet points */
-    padding-left: 0;       /* Remove default padding, if desired */
+    list-style-type: none; 
+    padding-left: 0; 
 }
 
 li::before {
-    content: "✨";        /* Add apple emoji */
-    margin-right: 8px;    /* Spacing between the emoji and the list item text */
+    content: "✨";  
+    margin-right: 8px; 
     font-size: 36px;   
 }
 
+/* the image grid for works */
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three columns */
-    gap: 0px 1%; /* Spacing between images */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px 1%;
     margin-left: auto;
     margin-right: 10%;
     margin-top: 30px;
@@ -325,20 +308,21 @@ li::before {
 }
 
 .image-grid img {
-    width: 100%; /* Makes the image fill the column */
-    height: auto; /* Maintains the image's aspect ratio */
+    width: 100%; 
+    height: auto;
     margin-bottom: 0;
 
 }
 
+/* overlay text on image */
 .image-with-text {
-    position: relative; /* This allows absolute positioning within it */
+    position: relative;
 }
 
 .overlay-text {
     position: absolute;
-    top: 10px; /* Adjust as needed */
-    left: 10px; /* Adjust as needed */
+    top: 10px;
+    left: 10px; 
     color: black;
     font-family: "londrina sketch", sans-serif;
     font-size: 50px;
@@ -354,109 +338,33 @@ li::before {
     text-decoration: underline;
 }
 
-/* hamburger icon */
+/* menu bar for smaller screen */
+
 .menu-container {
     display: none;
 }
 
+/* smaller home page image for smaller screen */
 .meSmall {
     display: none;
-}
-@media screen and (max-width: 1320px) {
-    body { background-color: #ee7e1b;  } 
-    .meImg {
-        max-width: 33%;
-        min-width: 300px;
-        max-height: 500px;
-        height: auto;
-        margin-right: 3%;
-    }
-    .intro {
-        line-height: 5vw;
-    }
-    .overlay-text {
-        font-size: 40px;
-    }
-}
-
-@media screen and (max-width: 1183px) {
-    .currentTimelineHeader {
-        font-size: 24px;
-    }
-    .timelineHeader {
-        font-size: 24px;
-    }
-}
-
-/* On screens that are 992px or less, apply a visible design/ layout change */
-@media screen and (max-width: 1012px) {
-  body { background-color: #9f0fac;  } 
-    .greyBox {
-        width: 12vw;
-        font-size: 2vw;
-        height: auto;
-    }
-    .overlay-text {
-        font-size: 30px;
-    }
-    #TA {
-        display: inline;
-      }
-      #TAFull {
-        display: none;
-      }
-      .SWE {
-        display: inline;
-      }
-      .SWEFull {
-        display: none;
-      }
-      #comp {
-        display: inline;
-      }
-      #compFull {
-        display: none;
-      }
-  .meImg {
-    max-width: 33%;
-    min-width: 250px;
-    max-height: 500px;
-    height: auto;
-    }
-    .intro {
-        font-size: 3vw;
-        line-height: 5vw;
-        margin-top: 5px;
-    }
-    .hello {
-        font-size: 3vw;
-    }
-    .outlined {
-        font-size: 6vw;
-    }
-    li::before {
-        content: "✨";        /* Add apple emoji */
-        margin-right: 5px;    /* Spacing between the emoji and the list item text */
-        font-size: 36px;   
-    }
 }
 
 .artCells {
     margin-top: 50px;
 }
 .row {
-    display: flex;            /* turn the container into a flexbox */
-    justify-content: space-between;  /* space the items out evenly */
-    margin-bottom: 10px;     /* space between rows */
+    display: flex;      
+    justify-content: space-between; 
+    margin-bottom: 10px; 
 }
 
+/* the Arts section */
 .artContainer{
     margin-right: 100px;
     width: calc(50% - 50px); 
 }
 
 .cellHeader {
-    /* width: calc(50% - 10px); */
     font-family: 'Londrina Sketch', cursive;
     font-size: 40px;
     font-weight: 400;
@@ -472,6 +380,7 @@ li::before {
 
 }
 
+/* the A little bit of Both section */
 .hashPoint {
     font-size: 20px;
     font-family: "architects daughter", sans-serif;
@@ -484,7 +393,93 @@ li::before {
 li.hashPoint::before {
     content: "#";
 }
-/* On screens that are 768 or less, apply a visible design/ layout change */
+
+/* resizing for different screen sizes */
+@media screen and (max-width: 1320px) {
+    /* body { background-color: #ee7e1b;  }  */
+    .meImg {
+        max-width: 33%;
+        min-width: 300px;
+        max-height: 500px;
+        height: auto;
+        margin-right: 3%;
+    }
+    .intro {
+        line-height: 5vw;
+    }
+    .overlay-text {
+        font-size: 40px;
+    }
+}
+
+
+@media screen and (max-width: 1183px) {
+    .currentTimelineHeader {
+        font-size: 24px;
+    }
+    .timelineHeader {
+        font-size: 24px;
+    }
+}
+
+/* On screens that are 992px or less, apply a visible design/ layout change */
+@media screen and (max-width: 1012px) {
+  /* body { background-color: #9f0fac;  }  */
+  /* resizing the grey boxes */
+    .greyBox {
+        width: 12vw;
+        font-size: 2vw;
+        height: auto;
+    }
+    .overlay-text {
+        font-size: 30px;
+    }
+    /* abbreviated position titles */
+    #TA {
+        display: inline;
+    }
+    #TAFull {
+        display: none;
+    }
+    .SWE {
+        display: inline;
+    }
+    .SWEFull {
+        display: none;
+    }
+    #comp {
+        display: inline;
+    }
+    #compFull {
+        display: none;
+    }
+    /* change homepage image size */
+    .meImg {
+        max-width: 33%;
+        min-width: 250px;
+        max-height: 500px;
+        height: auto;
+    }
+
+    /* resize intro texts */
+    .intro {
+        font-size: 3vw;
+        line-height: 5vw;
+        margin-top: 5px;
+    }
+    .hello {
+        font-size: 3vw;
+    }
+    .outlined {
+        font-size: 6vw;
+    }
+    li::before {
+        content: "✨";        
+        margin-right: 5px; 
+        font-size: 36px;   
+    }
+}
+    
 @media screen and (max-width: 768px) {
     .row {
         flex-wrap: wrap;
@@ -493,29 +488,27 @@ li.hashPoint::before {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
-        /* padding: 0; */
     }
-  body { background-color: #31be96; } 
+  /* body { background-color: #31be96; }  */
  
-  .currentTimelineHeader {
-    font-size: 20px;
-}
-.overlay-text {
-    font-size: 20px;
-}
-.timelineHeader {
-    font-size: 20px;
-}
-  .hello {
-    margin-left: 10px;
-    font-size: 25px;
-    margin-top: 30px;
-    /* position: absolute; */
-  }
-  .center-container{
-    flex-direction: column;
-  }
-  
+    .currentTimelineHeader {
+        font-size: 20px;
+    }
+    .overlay-text {
+        font-size: 20px;
+    }
+    .timelineHeader {
+        font-size: 20px;
+    }
+    .hello {
+        margin-left: 10px;
+        font-size: 25px;
+        margin-top: 30px;
+    }
+    .center-container{
+        flex-direction: column;
+    }
+
     .meImg {
         margin-left: auto;
         margin-right: auto;
@@ -523,7 +516,6 @@ li.hashPoint::before {
     }
 
     .openingText {
-        /* text-align: center; */
         width: 90%;
         left: 5%;
     }
@@ -544,45 +536,45 @@ li.hashPoint::before {
 
 }
 
-/* On screens that are 576 or less, apply a visible design/ layout change */
 @media screen and (max-width: 576px) {
-  body { background-color: #ea0d0d; } 
-  #comp {
-    display: none;
-  }
-  #compSmall {
-    display: inline;
-  }
-  .headerContainer {
-    display: none;
-  }
-  .companyName {
-    display: inline;
-  }
-  .fullCompanyName {
-    display: none;
-  }
-  .intro {
-    font-size: 7vw;
-    line-height: 50px;
-    margin-left: auto;
-    margin-right: 10%;
-    /* min-width: 280px; */
+  /* body { background-color: #ea0d0d; }  */
+  /* resize center container */
+    .center-container {
+        margin-top: 100px;
     }
+    .headerContainer {
+        display: none;
+    }
+    /* intro */
+    .intro {
+        font-size: 7vw;
+        line-height: 50px;
+        margin-left: auto;
+        margin-right: 10%;
+    }
+    /* abbreviated company and title names */
+    .companyName {
+        display: inline;
+    }
+    .fullCompanyName {
+        display: none;
+    }
+    #comp {
+        display: none;
+    }
+    #compSmall {
+        display: inline;
+    }
+
+    /* resize timeline section fonts and bullet points */
+    
     .outlined {
         font-size: 9vw;
     }
     .timelineHeader, .currentTimelineHeader {
         font-size: 18px;
     }
-  /* .meImg {
-    display: none;
-  } */
-  .center-container {
-    margin-top: 100px;
-  }
 
-   
     .star {
         font-size: 18px;
     }
@@ -597,6 +589,8 @@ li.hashPoint::before {
         margin: 0;
         line-height: 1;
     }
+
+    /* resize the Arts section */
     .cell {
         font-size: 16px;
     }
@@ -615,10 +609,11 @@ li.hashPoint::before {
         margin-bottom: 0px;
     }
     li.star::before {
-        content: "✨";        /* Add apple emoji */
+        content: "✨";
         font-size: 16px;   
 
     }
+    /* resize the a little bit of both section */
     li.hashPoint {
         font-size: 16px;
     }
@@ -643,6 +638,7 @@ li.hashPoint::before {
         margin: 0px;
     }
 
+    /* show the menu drop down bar for small screen */
     .menu-container {
         position: relative;
         width: 30px;
@@ -663,10 +659,7 @@ li.hashPoint::before {
         position: absolute;
         top: 100%;
         left: -150%;
-        /* margin-left: 42%; */
-        /* margin-right: 400px; */
-        /* background-color: #f9f9f9; */
-        /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+
         z-index: 1;
         font-family: "lintel", sans-serif;
         
@@ -680,7 +673,6 @@ li.hashPoint::before {
         text-decoration: none;
         border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
         border:solid 2px rgb(0, 0, 0);
-        /* display: flex; */
         align-items: center;
         justify-content: center; 
         margin-left: 10px;
@@ -695,6 +687,8 @@ li.hashPoint::before {
     .menu-container:hover .dropdown-content {
         display: block;
     }
+
+    /* replace the large image with the smaller one */
     .meImg {
         display: none;
     }
@@ -703,7 +697,4 @@ li.hashPoint::before {
         display: block;
         width: 80%;
     }
-   
-
 }
-

@@ -1,0 +1,119 @@
+.content{
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto; 
+}
+.blogTitle {
+    font-size: 35px;
+    font-weight: 800px;
+    margin: 0;
+    line-height: 1.5;
+}
+.blogContent{
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    
+}
+.blogContent p {
+    margin: 0;
+    text-indent: 2em;
+}
+.sectionTitle {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Architects Daughter', cursive;
+    margin-bottom: 30px;
+}
+.blogImgCover {
+    margin: 30px 0px;
+    width: 100%;
+    height: 300px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+.blogImg {
+    width: 50%;
+    margin: 40px auto;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+hr {
+    width: 100%; /* adjust to your preference */
+    border: none;
+    border-top: 2px solid #ddd; /* color and width of the line */
+    margin: 20px auto; /* vertical spacing and centering */
+}
+#ruleImg{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+}
+
+#stepImg{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+#obstacle {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.image-row {
+    display: flex;
+    justify-content: space-between; /* Distributes space evenly between the images */
+    margin-bottom: 20px;
+}
+
+.image-container {
+    width: 32%;
+    text-align: center; /* Center the caption under the image */
+}
+
+.image-container img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    /* height: auto; */
+}
+#mazeCity {
+    width: 100%;
+    padding-bottom: 80px;
+}
+
+.pdf-container {
+    position: relative;
+    padding-top: 141.42%; /* This determines the aspect ratio. For a standard A4, it's sqrt(2) times the width. */
+    overflow: hidden;
+}
+
+.pdf-container iframe,
+.pdf-container object {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}

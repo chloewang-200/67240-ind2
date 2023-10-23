@@ -1,6 +1,6 @@
-.content a {
+/* .content a {
     text-decoration: none;
-}
+} */
 body {     /* Enables flexbox layout */
     justify-content: center;     /* Centers children horizontally */
     align-items: center;         /* Centers children vertically */             /* Remove default body margin */

@@ -3,6 +3,9 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chloe Wang</title>
+    <meta name="description" content="website for Chloe Wang, student at Carnegie Mellon Univerisity(CMU)">
+    
+    <link href="css/posts.css" type="text/css" rel="stylesheet">
     <link href="css/styles.css" type="text/css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,7 +65,7 @@
         </div>
        
         <div class = "content">
-            <div class="skillsBox">
+            <!-- <div class="skillsBox">
                 <h1>What I do</h1>
                 <p>I have more than 10 years' experience building software for clients all over the world. Below is a quick overview of my main technical skill sets and technologies I use. Want to find out more about my experience? Check out my <a href="#">online resume</a> and <a href="#">project portfolio</a>.</p>
                 
@@ -88,9 +91,8 @@
                         <p>List skills/technologies here...</p>
                     </div>
                     
-                    <!-- ... Repeat for other skills ... -->
                 </div>
-            </div>
+            </div> -->
             <div class = "coding">
                 <div class = "sectionHeader">Coding.</div>
                 <div class = "sectionIntro">I'm a computer science major, so here's some SWE experience...🫢</div>
@@ -240,8 +242,8 @@
                 
             </div>
             <div class = "sectionHeader">A little bit of both.</div>
-            <div class = "sectionIntro">I love blending my passions in both areas to make fun stuff! 😎 Check out my favorite ones:</div>
-            <ul class = "points">
+            <div class = "sectionIntro">I love blending my passions in both areas to make fun stuff! 😎 Checkout more here: <a href="blogs.html" target="_blank">blogs</a></div>
+            <!-- <ul class = "points">
                 <li class = "hashPoint">
                     Tree Generation Algorithm
                 </li>
@@ -251,7 +253,10 @@
                 <li class = "hashPoint">
                     Pattern Generation
                 </li>
-            </ul>
+            </ul> -->
+            <div id="blogPostsContainer"></div>
+            <script src="posts/postData.js"></script>
+            <script src="posts/posts.js"></script>
            
         </div>
     </div>

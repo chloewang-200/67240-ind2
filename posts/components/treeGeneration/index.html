@@ -8,20 +8,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Indie+Flower&family=Inter:wght@400;600&family=Josefin+Sans:wght@600&family=Josefin+Slab&family=Jost:wght@600&family=Londrina+Sketch&family=Marcellus&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="images/favicon.png?">
+    <link rel="icon" type="image/png" href="../../../images/favicon.png?">
 </head>
 <body>
     <div class = "roundBox">
         <div class = "first">
             <!-- page title -->
-            <div class = "pageTitle"><a href = "index.html">Chloe.</a></div>
+            <div class = "pageTitle"><a href = "../../../index.html">Chloe.</a></div>
             <!-- page navigation -->
             <div class = "headerContainer">
                 <div class = "headers">
                     <a href = "../../../index.html">home</a>
                     <a href = "../../../resume.html">resume</a>
                     <a href = "../../../gallery.html">gallery</a>
-                    <a class="selected-text" href = "../../../works.html">works</a>
+                    <a class="selected-text" href = "../../../blogs.html">blogs</a>
                 </div>
             </div>
             <!-- drop down menu for smaller screens -->
@@ -35,16 +35,103 @@
                     <a href = "../../../index.html">home</a>
                     <a href="../../../resume.html">resume</a>
                     <a href="../../../gallery.html">gallery</a>
-                    <a href="../../../works.html">works</a>
+                    <a href="../../../blogs.html">blogs</a>
                 </div>
             </div>
         </div> 
     <!-- contents -->
     <div class = "content">
-        <div class = "blogTitle">Under Construction</div>
-        <div id="blogPostsContainer"></div>
-        <!-- <script src="posts/postData.js"></script>
-        <script src="posts/posts.js"></script> -->
+        <div class = "blogTitle">3D Tree Generation with L-Systems</div>
+        <hr>
+        <div class = "blogContent">
+            <div class = "sectionTitle">The Spark ✨</div>
+            <p>This project is about a very simple topic - the tree. I have learned about tree structures in many of the data structures classes. I learned how to
+                draw a flat, standard 2D tree when I first learned about recursion. And now, with hopefully
+                a little bit more knowledge in computer science, it intrigues me to whether I could create a tree structure in
+                3D that's more realistic and more complex. </p>
+            <img class = "blogImgCover" src="imgs/inspo.png">
+            <hr>
+            <div class = "sectionTitle">The Foundation 🔨</div>
+            <p>To start the project, I started by reading a very nice paper on this project: Intelligent Tree Modeling Based on L-system
+                By Ruoxi Sun, Jinyuan Jia, Marc Jaeger, recommend by my instructor <a href="https://jinmorhee.net/" target="_blank">Jinmo Rhee</a>.
+            Here's the L-System parameters introduced in their paper. And I decided to follow a similar set up for my tree system.</p>
+            <img class = "blogImg" src="imgs/paper.png">
+            <p>Here's my set up!</p>
+            <img class = "blogImg" src="imgs/papermy.png">
+            <hr>
+            <div class = "sectionTitle">The Params 📝</div>
+            <div class="subTitle">#1 Angle</div>
+            <p>The first parameter is the branching angle. This changes the angle between each branches - the larger means the tree will be more "spread out",
+                and smaller angles represent more "upright" trees.
+            </p>
+            <img class = "blogImg" src="imgs/angle.gif">
+            <div class="subTitle">#2 Iterations</div>
+            <p>This controls the total number of iterations the fractal tree algorithm runs. I'm using this factor
+                as a way to control the complexity of the tree. The more iterations, the more complex the tree will be. Or in another
+                way of thinking this, more iterations means more maturity of the tree.
+            </p>
+            <img class = "blogImg" src="imgs/iteration.gif">
+            <div class="subTitle">#3 Length Reduction</div>
+            <p>This defines the decrease of length on each branch. For a tree, the "sub-branches" are usually
+                shorter than the "parent branch". This factor controls how much shorter (or longer if you set the 
+                factor to be larger than 1) the sub-branches are.
+            </p>
+            <img class = "blogImg" src="imgs/lengthReduction.gif">
+            <div class="subTitle">#4 Number of Branches</div>
+            <p>This controls the number of recursive split performed, hence increasing the density of the branches.
+                The more branches, the more dense the tree will be. 
+            </p>
+            <img class = "blogImg" src="imgs/branches.gif">
+            <div class="subTitle">#5 Minimum Length</div>
+            <p>This defines the minimum branch length. The animation shows fixed maximum branch length with varying minimum branch length                
+            </p>
+            <img class = "blogImg" src="imgs/minLen.gif">
+            <div class="subTitle">#6 Leafing Level</div>
+            <p>This defines the minimum branch length. This is the minimum length one single branch can be. 
+            <img class = "blogImg" src="imgs/leafing.gif">
+            <div class="subTitle">#7 Leaf Width</div>
+            <p>The defines the width of the leaves, super straight forward 🤓️          
+            </p>
+            <img class = "blogImg" src="imgs/leafWidth.gif">
+            <div class="subTitle">#8 Reduction Width</div>
+            <p>The defines the radius of the branches, and how much they should reduce. In other
+                words, this controls the thinnest and thickest radius of the branches.          
+            </p>
+            <img class = "blogImg" src="imgs/branchReduction.png">
+            <hr>
+            <div class = "sectionTitle">The Controlled ⚙️</div>
+            <p>By controlling different parameters, the algorithm produces very interesting and diverse results.</p>
+            <p>Controlling the leafing level decides how tall the leaves will grow. For example willow and pine trees have 
+                very different leafing levels. Changing this parameter would mimic the appearance of different trees.
+            </p>
+            <img class = "blogImg" src="imgs/leafinglevel.png">
+            <p>Differing the rotation levels will decide the directions of the tree branches. When the min and max rotation levels are a larger
+                range, the tree will span a larger space. In comparison, when the rotation range is smaller, the tree will be more upright, or
+                leaning towards the same direction.
+            </p>
+            <img class = "blogImg" src="imgs/rotation.png">
+            <p>Changing the rules will produce very unexpected results. Different rules seem to represent different
+                tree species. For now, all these rules are randomly generated, I will look into this more to see what patterns
+                I can find, and what patterns correspond to what types of trees.
+            </p>
+            <img class = "blogImg" src="imgs/rules.png">
+            <hr>
+            <div class = "sectionTitle">The Results 💗</div>
+            <p>And here are the results gerated from this model! They represent such different species of trees!</p>
+            <div class="image-row">
+                <div class="image-container">
+                    <img src="imgs/tree1.png" alt="Description of Image 1">
+                </div>
+                <div class="image-container">
+                    <img src="imgs/tree3.png" alt="Description of Image 2">
+                </div>
+                <div class="image-container">
+                    <img src="imgs/tree2.png" alt="Description of Image 3">
+                </div>
+            </div>
+            <p class="final"></p>
+        </div>
+
     </div>
 </body>
 </html>

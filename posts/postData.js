@@ -61,6 +61,13 @@ const blogPostsData = [
         date: "2023-03-25",
         intro: "I explored music composition using Nyquist (a programming language for sound synthesis and music composition). ",
         link: "posts/components/music/index.html"
+    },
+    {
+        image: "posts/components/robotics/imgs/cover.png",
+        title: "Robotics in the Making : Facade of the Future",
+        date: "2023-06-29",
+        intro: "An exploration of using robotics to create a Ceramic facade system with clay tiles and wooden structure",
+        link: "posts/components/robotics/index.html"
     }
     
 ];

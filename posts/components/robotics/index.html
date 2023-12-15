@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chloe Wang</title>
+    <link href="../../../css/styles.css" type="text/css" rel="stylesheet">
+    <link href="../../../css/blog.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Indie+Flower&family=Inter:wght@400;600&family=Josefin+Sans:wght@600&family=Josefin+Slab&family=Jost:wght@600&family=Londrina+Sketch&family=Marcellus&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../../images/favicon.png?">
+</head>
+<body>
+    <div class = "roundBox">
+        <div class = "first">
+            <!-- page title -->
+            <div class = "pageTitle"><a href = "../../../index.html">Chloe.</a></div>
+            <!-- page navigation -->
+            <div class = "headerContainer">
+                <div class = "headers">
+                    <a href = "../../../index.html">home</a>
+                    <a href = "../../../resume.html">resume</a>
+                    <a href = "../../../gallery.html">gallery</a>
+                    <a class="selected-text" href = "../../../blogs.html">blogs</a>
+                </div>
+            </div>
+            <!-- drop down menu for smaller screens -->
+            <div class="menu-container">
+                <div class="menu-icon" onclick="toggleDropdown()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="dropdown-content">
+                    <a href = "../../../index.html">home</a>
+                    <a href="../../../resume.html">resume</a>
+                    <a href="../../../gallery.html">gallery</a>
+                    <a href="../../../blogs.html">blogs</a>
+                </div>
+            </div>
+        </div> 
+    <!-- contents -->
+        <div class = "content">
+            
+            <div class = "blogTitle">Utopian Maze Generator with Pathfinding</div>
+            <hr>
+            <div class = "blogContent">
+                <div class = "sectionTitle">The Spark ✨</div>
+                
+                <p>I worked on this project with my friends Howie, Robert, Shray, Tory at CMU's DFAB Lab under supervision of Professor Bidgoli.</p>
+                <img class = "blogImgCover" src="imgs/clayWeave.png" />
+                <p>In this project, we wanted to explore how robotics can be used in the creative process, specifically in its design
+                    implications and applications in facade systems. We are specifically interested in using clay as the
+                    material. We learned that clay prints can change significantly before, during, and after the 3D printing process, due to the malleability of the material and the environmental conditions in the drying process. Thus, one must reconsider the precision they can really achieve with these clay components, especially in an aggregate assembly. One interesting opportunity is that the extrusion of clay leaves visible traces on the surface, resulting in an unexpected expression. We will study the different features of clay, and how different settings will make the design outcome unique, The project will also explore printing on non-linear surface with introduction of new materials into the printing process. We will study how clay react to different surfaces, and how printing on non-linear surface differs from traditional surfaces. We will also create new ways to connect wood and clay. 
+                </p>
+                <hr>
+                 <div class = "sectionTitle">The Foundation 🔨</div>
+                <p>The robot we used is the ABB IRB 4400 with a custom-made suction tube that emits clay. The tube has a motor that connected
+                    to an external outlet, and the speed of the extrusion needs to be adjusted by manually adjusting the motor. </p>
+                <img class = "blogImg" src="imgs/Rules.png" />
+                <p>Applying these rules, the nodes will expand to different configurations. And the next step is to turn them in to 3D.
+                </p>
+                <img id = "ruleImg" src="imgs/ruleResult.png" />
+                <hr>
+                <div class = "sectionTitle">Connecting Stairs 🫣</div>
+                <p> To do
+                    this, I decided represent each node as a block, and the edges represent the direction to put the next block. And a grey-red edge
+                    represents a level change. Hence, the maze will start building from the highest block, and gradually go down from the center.
+                    Merging levels seamlessly was no small feat. A maze spread across dimensions required transitions - stairs. To adeptly place these stairs, connecting the maze's multiple layers,
+                     I turned to the Randomized Prim's Algorithm. This would add stairs to ensure there's at least
+                     one path from source to destination, and also add in random stairs on other routes. Beyond mere placement, this algorithm was instrumental in guaranteeing a clear, uninterrupted route from inception to conclusion.</p>
+                <img id = "stepImg" src = "imgs/stairs.png" />
+                <p>It's already starting to have the vibe of Sean C Jackson's mazes!</p>
+                <hr>
+                <div class = "sectionTitle">Adding Obstacles 😈</div>
+                <p>But where's the fun without obstacles? A city, even a maze-like one, teems with life and structures. Channeling this essence, I seeded the paths with trees, bushes, and houses. These weren't mere decorative additions; they were strategic blockers, upping the maze's complexity.
+                    An and a flag are added to represent the start and end of the maze. The solution path is shown in red.</p>
+                </p>
+                <img id = "obstacle" src="imgs/obstacles.png">
+                <hr>
+                <div class = "sectionTitle">The Result! 💗</div>
+                <p>The algo can generate mazes on different scales. I rendered the images in 
+                    this white monotone color for now because they really bring out the 
+                    rhythm of the maze. I will add in colors and handdrawing-textures
+                in the future when I have more time to work on this project (hopefully)🤐️</p>
+                </p>
+                <div class="image-row">
+                    <div class="image-container">
+                        <img src="imgs/1.png" alt="Description of Image 1">
+                        <p>Iteration = 10</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="imgs/2.png" alt="Description of Image 2">
+                        <p>Iteration = 20</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="imgs/3.png" alt="Description of Image 3">
+                        <p>Iteration = 40</p>
+                    </div>
+                    
+                </div>
+                <img id = "mazeCity" src = "imgs/mazeCity.png" />
+            </div>
+            
+        </div>
+</body>
+</html>

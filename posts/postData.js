@@ -67,7 +67,7 @@ const blogPostsData = [
         title: "Robotics in the Making : Facade of the Future",
         date: "2023-06-29",
         intro: "An exploration of using robotics to create a Ceramic facade system with clay tiles and wooden structure",
-        link: "posts/components/robotics/index.html"
+        link: "./posts/components/robotics/index.html"
     }
     
 ];

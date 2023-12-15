@@ -63,7 +63,7 @@ const blogPostsData = [
         link: "posts/components/music/index.html"
     },
     {
-        image: "posts/components/robotics/imgs/cover.png",
+        image: "./posts/components/robotics/imgs/cover.png",
         title: "Robotics in the Making : Facade of the Future",
         date: "2023-06-29",
         intro: "An exploration of using robotics to create a Ceramic facade system with clay tiles and wooden structure",

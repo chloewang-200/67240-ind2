@@ -12,33 +12,7 @@
 </head>
 <body>
     <div class = "roundBox">
-        <div class = "first">
-            <!-- page title -->
-            <div class = "pageTitle"><a href = "../../../index.html">Chloe.</a></div>
-            <!-- page navigation -->
-            <div class = "headerContainer">
-                <div class = "headers">
-                    <a href = "../../../index.html">home</a>
-                    <a href = "../../../resume.html">resume</a>
-                    <a href = "../../../gallery.html">gallery</a>
-                    <a class="selected-text" href = "../../../blogs.html">blogs</a>
-                </div>
-            </div>
-            <!-- drop down menu for smaller screens -->
-            <div class="menu-container">
-                <div class="menu-icon" onclick="toggleDropdown()">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-                <div class="dropdown-content">
-                    <a href = "../../../index.html">home</a>
-                    <a href="../../../resume.html">resume</a>
-                    <a href="../../../gallery.html">gallery</a>
-                    <a href="../../../blogs.html">blogs</a>
-                </div>
-            </div>
-        </div> 
+        <script src="../../../header.js"></script>
     <!-- contents -->
         <div class = "content">
             
@@ -57,7 +31,18 @@
                  <div class = "sectionTitle">The Foundation 🔨</div>
                 <p>The robot we used is the ABB IRB 4400 with a custom-made suction tube that emits clay. The tube has a motor that connected
                     to an external outlet, and the speed of the extrusion needs to be adjusted by manually adjusting the motor. </p>
-                <img class = "blogImg" src="./imgs/Rules.png" />
+                    <div class="image-row">
+                        <div class="image-container">
+                            <img src="imgs/tool1.png" alt="Description of Image 1">
+                        </div>
+                        <div class="image-container">
+                            <img src="imgs/tool2.gif" alt="Description of Image 2">
+                        </div>
+                        <div class="image-container">
+                            <img src="imgs/tool3.gif" alt="Description of Image 3">
+                        </div>
+                        
+                    </div>
                 <p>Applying these rules, the nodes will expand to different configurations. And the next step is to turn them in to 3D.
                 </p>
                 <img id = "ruleImg" src="./imgs/ruleResult.png" />

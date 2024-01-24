@@ -43,48 +43,96 @@
                         </div>
                         
                     </div>
-                <p>Applying these rules, the nodes will expand to different configurations. And the next step is to turn them in to 3D.
-                </p>
-                <img id = "ruleImg" src="./imgs/ruleResult.png" />
-                <hr>
-                <div class = "sectionTitle">Connecting Stairs 🫣</div>
-                <p> To do
-                    this, I decided represent each node as a block, and the edges represent the direction to put the next block. And a grey-red edge
-                    represents a level change. Hence, the maze will start building from the highest block, and gradually go down from the center.
-                    Merging levels seamlessly was no small feat. A maze spread across dimensions required transitions - stairs. To adeptly place these stairs, connecting the maze's multiple layers,
-                     I turned to the Randomized Prim's Algorithm. This would add stairs to ensure there's at least
-                     one path from source to destination, and also add in random stairs on other routes. Beyond mere placement, this algorithm was instrumental in guaranteeing a clear, uninterrupted route from inception to conclusion.</p>
-                <img id = "stepImg" src = "./imgs/stairs.png" />
-                <p>It's already starting to have the vibe of Sean C Jackson's mazes!</p>
-                <hr>
-                <div class = "sectionTitle">Adding Obstacles 😈</div>
-                <p>But where's the fun without obstacles? A city, even a maze-like one, teems with life and structures. Channeling this essence, I seeded the paths with trees, bushes, and houses. These weren't mere decorative additions; they were strategic blockers, upping the maze's complexity.
-                    An and a flag are added to represent the start and end of the maze. The solution path is shown in red.</p>
-                </p>
-                <img id = "obstacle" src="./imgs/obstacles.png">
-                <hr>
-                <div class = "sectionTitle">The Result! 💗</div>
-                <p>The algo can generate mazes on different scales. I rendered the images in 
-                    this white monotone color for now because they really bring out the 
-                    rhythm of the maze. I will add in colors and handdrawing-textures
-                in the future when I have more time to work on this project (hopefully)🤐️</p>
+                <p>We had to make sure the clay is not too wet or too dry in order for the extrusion to be smooth.
                 </p>
                 <div class="image-row">
                     <div class="image-container">
-                        <img src="./mgs/1.png" alt="Description of Image 1">
-                        <p>Iteration = 10</p>
+                        <img src="imgs/clay1.JPG" alt="Description of Image 1">
                     </div>
                     <div class="image-container">
-                        <img src="./imgs/2.png" alt="Description of Image 2">
-                        <p>Iteration = 20</p>
+                        <img src="imgs/clay2.JPG" alt="Description of Image 2">
                     </div>
                     <div class="image-container">
-                        <img src="./imgs/3.png" alt="Description of Image 3">
-                        <p>Iteration = 40</p>
+                        <img src="imgs/clay3.JPG" alt="Description of Image 3">
+                    </div>
+                </div>
+                <hr>
+                <div class = "sectionTitle">Starting to Print 🫣</div>
+                <p> With the extrusion tool and the clay ready, the next step is to set up the work objects and the
+                    printing paths in RobotStudio and Rhino Grasshopper!
+                </p>
+                <br>
+                <img id = "stepImg" src = "./imgs/setup.png" />
+                <br>
+                <p>Then we did lots and lots of test prints...</p>
+                <p>Some were successful and many were not</p>
+                <br>
+                <img id = "stepImg" src = "./imgs/testPrints.png" />
+                <hr>
+                <div class = "sectionTitle">The Obstacles 😈</div>
+                <p>We encountered several challenges along the way. We were not able to complete resolve them,
+                    but we found ways to mitigate them.
+                </p>
+                <div class = "subTitle">#1 Air Bubbles</div>
+                <p>Unavoidably, there were air bubbles in the clay. When extruding, this became troublesome as it distorts the printing 
+                    layers. We were able to mitigate it by aligning the cartridge horizontally; this minimizes the potential of air bubbles forming within the material, generating a more consistent print flow and module
+                </p>
+                <div class = "subTitle">#2 Uneven Board</div>
+                <p> It's hard to find a completely even board - and in our case
+                    even a difference in millimeter will affect the result. We mitigate this problem by printing
+                    small amounts of structures each time - two printed modules per plate, ensuring flexibility in mass production from printing & drying
+                </p>
+                <div class="image-row">
+                    <div class="image-container">
+                        <img src="imgs/uneven3.gif" alt="Description of Image 2">
+                    </div>
+                    <div class="image-container">
+                        <img src="imgs/uneven1.png" alt="Description of Image 1">
+                    </div>
+                    <div class="image-container">
+                        <img src="imgs/uneven2.png" alt="Description of Image 2">
                     </div>
                     
                 </div>
-                <img id = "mazeCity" src = "./imgs/mazeCity.png" />
+                <div class = "subTitle">#3 Nozzle Too High Up</div>
+                <p>When the nozzle is too high up, the clay will not stick to the board. We mitigate this problem by
+                    manually increase speed in the first layer for faster extrusion to cover the gap.</p>
+                <div class="twoImagesRow">
+                    <img src="imgs/nozzle1.png" alt="Description of Image 2">
+                    <img src="imgs/nozzle2.png" alt="Description of Image 1">
+                </div>
+                <hr>
+                
+                <div class = "sectionTitle">Printing & Assembling 🔨</div>
+                Addressing the challenges above, we were able to print out the modules! We printed 16 modules in total.
+                <!-- <div class="twoImagesRow">
+                    <img src="imgs/print1.png" alt="Description of Image 2">
+                    <img src="imgs/print2.png" alt="Description of Image 1">
+                </div> -->
+                We then laminated the wooden structure and assembled the modules together.
+                <div class="image-row">
+                    <div class="image-container">
+                        <img src="imgs/wood1.png" alt="Description of Image 1">
+                    </div>
+                    <div class="image-container">
+                        <img src="imgs/wood2.png" alt="Description of Image 2">
+                    </div>
+                    <div class="image-container">
+                        <img src="imgs/wood3.png" alt="Description of Image 3">
+                    </div>
+                </div>
+                <hr>
+                
+                <div class = "sectionTitle">The Result! 💗</div>
+                <p>Here's the final result! Though it's on a smaller scale, we imagine it
+                    to represent a facade where each of this modules serves as a half-opened window
+                    that woule rotate and brings an opening to the facade</p>
+                </p>
+                <img class="blogImgCover" src="imgs/res1.png" alt="Description of Image 1">
+                <img class="blogImgCover" src="imgs/res2.png" alt="Description of Image 1">
+                <br>
+                <br>
+                <br>
             </div>
             
         </div>

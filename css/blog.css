@@ -169,3 +169,25 @@ hr {
 .final {
     padding-bottom: 70px;
 }
+
+.twoImagesRow {
+    display: flex;
+    
+    justify-content: space-between; /* Centers the images in the container */
+    align-items: stretch; /* Ensures images stretch to fill the container */
+    width: 100%; 
+    max-width: 100%; /* Ensures the container doesn't exceed the width of the window */
+}
+
+.twoImagesRow img {
+    width: calc(50% - 5px); /* Adjusts the width of each image */
+    object-fit: cover; /* Crops images to fit their respective areas */
+    height: auto; /* Sets the height of the images to be auto */
+}
+
+
+.twoImagesRow img:last-child {
+    margin-right: 0; /* Removes margin from the right of the last image */
+}
+
+

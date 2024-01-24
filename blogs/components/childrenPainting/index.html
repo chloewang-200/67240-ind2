@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chloe Wang</title>
+    <link href="../../../css/styles.css" type="text/css" rel="stylesheet">
+    <link href="../../../css/blog.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Indie+Flower&family=Inter:wght@400;600&family=Josefin+Sans:wght@600&family=Josefin+Slab&family=Jost:wght@600&family=Londrina+Sketch&family=Marcellus&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../../images/favicon.png?">
+</head>
+<body>
+    <div class = "roundBox">
+        <script src="../../../header.js"></script>
+    <!-- contents -->
+    <div class = "content">
+        <div class = "blogTitle">Machine Learning in Recreation of Naive Art</div>
+        <hr>
+        <div class = "blogContent">
+            
+            <div class = "sectionTitle">The Spark ✨</div>
+            
+            <p>In the evolving landscape of digital art, the balance between complexity and simplicity is pivotal. As we delved into various imaging platforms, one stood out in its sophistication: MidJourney. Its generated images are undeniably realistic, yet they often miss a touch of “naiveness” that can deeply resonate with emotions. The images generated usually lack a texture of simplicity and frankness that arouses emotions. In my process of generating images on Mid-journey, even when I input prompts of abstract artists and styles, the generated photos remain noticeably developed or “complete”. This led to an intriguing exploration: How might we leverage MidJourney to craft images that are “incomplete”, “childish”, and “naive”, aiming to stir the very emotions we seek?</p>
+            <hr>
+            <div class = "sectionTitle">The Foundation 🔨</div>
+            <p>.The CLIP (Contrastive Language-Image Pre-Training) 
+                The CLIP (Contrastive Language-Image Pre-Training) model is a deep learning model that has been trained on a large dataset of images and corresponding textual descriptions. Its objective is to learn to associate images and their textual descriptions by embedding them in a shared latent space. This shared space allows for the computation of the similarity between the images and their textual descriptions. CLIP has 3 stages:
+                <ul>
+                    <li>Pre-Training: The model is first pre-trained on a large dataset of image-caption pairs, with the aim of learning a shared representation of images and their textual descriptions. During pre-training, the model learns to predict which textual description corresponds to which image.</li>
+                    <li>Fine-Tuning: The pre-trained model is then fine-tuned on a specific task such as image classification, object detection, or visual question answering. The model is further fine-tuned on a smaller, task-specific dataset to improve its performance on that particular task.</li>
+                    <li>Inference: When the model is presented with a new image or text, it computes the embeddings for both and compares their similarity in the shared latent space. The model assigns a higher score to image-text pairs that are semantically similar and a lower score to pairs that are dissimilar.</li>
+                </ul>
+            </p>
+            <img class = "blogImg" src="imgs/algo.png" />
+            <p>For different room types, they would produce different room sizes according to the most common/standard
+                commercial room sizes. For example, a bedroom would be 10'x12', a bathroom would be 5'x8', and a kitchen would be around 10'x10'.
+            </p>
+            <p>The dataset we decided to use is this <a href = "https://www.artsonia.com/museum/gallery.asp?project=2637768" target = "_blank">online gallery of
+                children's paintings on emotions</a>. This is a great source to find naive art, as children's paintings are often naive and are a frank expression of
+                their emotions. We used a web scraper to scrape the images and their corresponding titles and descriptions. We then used the CLIP model to embed the images and their descriptions into a shared latent space. We then used the embeddings to train a GAN model to generate naive art.
+            </p>
+            <hr>
+            <div class = "sectionTitle">The Results 💗</div>
+            <p>And here are the results gerated from the machine learning model!</p>
+            <img class = "blogImg" src = "imgs/collage.png" />
+            <p>I was so in love with the resulting artblogs, and I decided to take a further step to animate them!</p>
+            <div class="image-row">
+                <div class="image-container">
+                    <img src="imgs/image16.gif" alt="Description of Image 1">
+                    <p>Feeling Angry</p>
+                </div>
+                <div class="image-container">
+                    <img src="imgs/image20.gif" alt="Description of Image 2">
+                    <p>Feeling Sad</p>
+          
+                </div>
+                <div class="image-container">
+                    <img src="imgs/image26.gif" alt="Description of Image 3">
+                    <p>Feeling Loved</p>
+                </div>
+            </div>
+            <div class="image-row">
+                <div class="image-container">
+                    <img src="imgs/image27.gif" alt="Description of Image 1">
+                    <p>Feeling Happy</p>
+                    
+                </div>
+                <div class="image-container">
+                    <img src="imgs/image28.gif" alt="Description of Image 2">
+                    <p>Feeling Grumpy</p>
+          
+                </div>
+                <div class="image-container">
+                    <img src="imgs/image29.gif" alt="Description of Image 3">
+                    <p>Feeling Excited</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

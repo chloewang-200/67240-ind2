@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chloe Wang</title>
+    <link href="../../../css/styles.css" type="text/css" rel="stylesheet">
+    <link href="../../../css/blog.css" type="text/css" rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Indie+Flower&family=Inter:wght@400;600&family=Josefin+Sans:wght@600&family=Josefin+Slab&family=Jost:wght@600&family=Londrina+Sketch&family=Marcellus&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../../images/favicon.png?">
+</head>
+<body>
+    <div class = "roundBox">
+        <script src="../../../header.js"></script>
+    <!-- contents -->
+        <div class = "content">
+            
+            <div class = "blogTitle">Computer Music - Mongolian Warriors</div>
+            <hr>
+            <div class = "blogContent">
+                <img class = "blogImgCover" src="imgs/warriors.png" />
+                <p>Feel free to listen to the music while reading how I created it!😊</p>
+                <audio controls class = "audio">
+                    <source src="music.wav" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <hr>
+                <div class = "sectionTitle">The Spark ✨</div>
+                
+                <p>The music is created using Nyquist. Nyquist is a programming language for sound synthesis and music composition. My motivation is to create a composition that resembles Mongolia warriors fighting on horses. It would first depict the landscape and then a sudden turn as the sound of a war horn cuts through. The war horns would signal the arrival of danger. And as the battle begins, the music take on a more rhythmic quality, capturing the movement and energy of the warriors on horseback. The melody is more complex and layered. And later on the music would be more sparse and quiet, capturing the exhaustion and loss that accompanies the end of the battle. And in the end, the composition will conclude with the scene of a single horse's footstep, evoking the image of it wander lonely across the empty landscape. </p>
+                
+                <hr>
+                <div class = "sectionTitle">Mixing Techniques 💪</div>
+                <p>I utilized Nyquist to generate each segment of melody, and then used Audacity to mix the composition. In order to create seamless transitions between different pieces, I employed the fade in and fade out effects. This was particularly important for the end of the composition, where I utilized the fade out effect to emulate the sound of horses running away. I also adjusted the amplitude for the melodies throughout the composition to depict the contrast between a calm, steady melody and a fast-paced more aggressive melody. 
+                To further enhance the overall sound of the composition, I overlaid the generated melody with the sound of horse steps. This helped to depict the image of warriors fighting on horseback. Additionally, I incorporated sound effects such as Wahwah and tremblo to create friction and tension in the middle section of the composition, with the aim to represent the violence of the battle.</p>
+                <hr>
+                 <div class = "sectionTitle">Programming Techniques 🎵</div>
+                 <p>I used Nyquist to create the music, here are some of the techniques I used! </p>
+                <ul>
+                    <li>I used looping to generate melody that functions as the background music for the middle of the composition in order to add texture and complexity to the music.</li>
+                    <li>I also used various different pattern generations to create different melody, such as make-cycle and make-random. I used these patterns in both the pitches and also the ion and the duration. For example the function landscape-sound() has a larger ioi and also larger duration, in order to represent a peaceful and joyful scene of the landscape. And in function horse-sound(), I used make-cycle to create a looped pitches with three longer duration of sound followed by a shorter one, mimicking the sound of horse running. And in the function battle-sound(), the ioi was much smaller and thee duration is also smaller to represent warriors fighting and the fast pace of the war. Similarly, battle-sound2() had a similar structure to battle-sound(), with the difference being the pitches used to create the pattern. The pitches was lower, and also make-random was used to create a diverse sound effect that represents the moves of the warriors.</li>
+                    <li>I used granular synthesis to create scratchy coarse sounds to be placed in the "battle scene" in my composition. The horse step sound generated from the previous step was used, in order to create a sound that is somewhat harmonious to the other melodies, but also adds the tension that is desired in this part of the composition.</li>
+                    <li>I also used pattern generation to create the drum beats in the background. The sound of the drum is created using the noise function, and then I created drum beats of different rhythms using the make-cycle function. Two drum beats of different rhythms are overlayed together to add diversity to the composition.</li>
+                    <li>I used physical models of flute, clarinet and saxophone to mimic the sound of horn in the composition. I placed them in sequence to each other in Audacity to create the effect of war horn warning of danger that passes down from far away. </li>
+                    
+                </ul>
+                <hr>
+                <div class = "sectionTitle">The Code 🤓</div>
+                <p>Here's the code! It is written in Nyquist, and I can't find a library to highlight it semtantically. Sorry if
+                    this is too hard to read 🥹</p>
+                <pre class = "code">
+                    <code >
+;drum-stroke sound
+define function drum-stroke()
+    return noise() * pwev(1, 0.05, 0.1)
+
+;drum-stroke sound that's a tiny bit sharper
+define function drum-stroke2()
+    return noise() * pwev(0.1, 0.2, 0.2)
+
+;drum beats 1 for background
+begin
+    with 
+        phrase-pat = make-cycle(list(s, s, s, s, s))
+    exec score-gen(save: quote(nested-example),
+                    score-len: 50, 
+                    ioi: next(phrase-pat),
+                    name: quote(drum-stroke))
+end
+
+;drum beats 2 for background
+begin
+    with 
+        phrase-pat = make-cycle(list(q, s, q, s))
+    exec score-gen(save: quote(nested-example),
+                    score-len: 12, 
+                    ioi: next(phrase-pat),
+                    name: quote(drum-stroke2))
+end
+
+
+;create the beginning melody
+set pitches = {c5 d5 d6 e5 g5 e5 f5 e5 f4 d6 f5 d6}
+set myscore = nil
+loop with pitch, vel, event
+    for i from 0 below 32 
+    for start from 0 by 0.25
+    set pitch = nth(random(length(pitches)), pitches)
+    set vel = 10 + 6 * #?(i < 16, i, 32 - i)
+    set event = list(start, 2, list(quote(note),
+        :pitch, pitch, :vel, vel))
+    set myscore &= event
+end
+
+;flute to be used in later composition
+function fluteInstr(pitch: c4, vel: 80)
+    begin
+    return flute(pitch, env(0.4, 0.2, 0.1, 0.5, 0.7, 0.8, 1.2)) * 0.3
+    end
+
+
+;clarinet to use
+function clarinet(pitch: c4)
+    begin
+    return clarinet-freq(pitch, (stk-breath-env(1.2,2,3)), pwl( 0.1, 0.6, 3 )) 
+    end
+
+;landscape, calm sound
+function landscape-sound()
+    begin
+    with pitches = make-cycle(list(a5, g5, d4, a5, a5, g5, g5, a5)),
+    
+    phrase-pat = make-cycle(list(0.3, 0.2,0.2,0.3,0.2,0.1,0.5,0.1)),
+            octaves = make-random(list( make-copier(make-length(make-cycle(make-random({{-12 :max 1} {-6 :max 1}})), 1), repeat: 5, merge: t)))
+    return score-gen (save: quote(p6score),
+                        name: quote(fluteInstr),
+                    score-len: 48,
+                        ioi: 0.3,
+                        dur: next(phrase-pat),
+                        pitch: next(pitches)
+                    )
+    end
+
+;horse sound
+function horse-sound()
+    begin
+    with pitches = make-cycle(list(d5, d5, d4, e5, d5, d5, d5, e5)),
+    
+            phrase-pat = make-cycle(list(0.1, 0.1,0.1,0.1,0.1,0.1,0.1,0.1)),
+    ioi-pat = make-cycle(list(0.3, 0.3,0.3,0.1,0.3,0.3,0.3,0.1)),
+            octaves = make-random(list( make-copier(make-length(make-cycle(make-random({{-12 :max 1} {-6 :max 1}})), 1), repeat: 5, merge: t)))
+    return score-gen (save: quote(p6score),
+                    score-len: 48,
+                        ioi: next(ioi-pat),
+                        dur: next(phrase-pat) + 0.2,
+                        pitch: next(pitches)
+                    )
+    end
+
+;battle sound for the middle of the composition
+function battle-sound()
+    begin
+    with pitches = make-random(list(g5, a5, g4, a5, g5, f5, d5, d5)),
+    
+    phrase-pat = make-cycle(list(0.1, 0.1,0.1,0.1,0.1,0.1,0.1,0.1)),
+            octaves = make-random(list( make-copier(make-length(make-cycle(make-random({{-12 :max 1} {-6 :max 1}})), 1), repeat: 5, merge: t)))
+    return score-gen (save: quote(p6score),
+                        name: quote(clarinet),
+                    score-len: 48,
+                        ioi: 0.15,
+                        dur: next(phrase-pat),
+                        pitch: next(pitches)
+                    )
+    end
+
+;battle sound with the aim to mimic metal clicking
+variable *gs-filename* = "./tmp.wav",
+            *granulate-score* ;; the computed score is saved here
+
+define function make-granulate-score(fileoffset: 0, 
+                                        randomness: 1, 
+                                        fileend: 10,
+                                        grain-dur: 0.05,
+                                        ioi: 0.025,
+                                        stretch: 1.0,
+                                        density: 1.0,
+                                        speed: 1.0,
+                                        sinegrain: #f)
+    loop
+    with score, score-time = 0
+    while fileoffset < fileend
+    if rrandom() <= density then
+        begin with offset = fileoffset + rrandom() * randomness
+        ;; avoid reading anything beyond fileend
+        if offset + grain-dur <= fileend then
+            if sinegrain then set score @= list(score-time, grain-dur, 
+                            list(quote(sine-grain)))
+            else set score @= list(score-time, grain-dur, 
+                            list(quote(file-grain),
+                                    quote(:offset), fileoffset + rrandom() * randomness, quote(:speed), speed))
+        end
+    set score-time += ioi,
+        fileoffset += ioi / stretch
+    finally 
+        begin
+        display "score computed", length(score)
+        ;; KEEP THIS ASSIGNMENT!! (autograder wants to see the score)
+        set *granulate-score* = reverse(score)
+        return *granulate-score*
+        end
+    end 
+
+function coarse-battle-sound()
+    return timed-seq(make-granulate-score(fileoffset: 0, 
+                                        randomness: 0, 
+                                        fileend: 10,
+                                        grain-dur: 0.02,
+                                        ioi: 0.01,
+                                        stretch: 3,
+                                        density: 0.1))
+
+;battle-sound
+function battle-sound2()
+    begin
+    with pitches = make-random(list(g3, a3, g3, a3, g3, f4, d3, d4)),
+    
+    phrase-pat = make-cycle(list(0.1, 0.1,0.1,0.1,0.1,0.1,0.1,0.1)),
+            octaves = make-random(list( make-copier(make-length(make-cycle(make-random({{-12 :max 1} {-6 :max 1}})), 1), repeat: 5, merge: t)))
+    return score-gen (save: quote(p6score),
+                        name: quote(clarinet),
+                    score-len: 48,
+                        ioi: 0.15,
+                        dur: next(phrase-pat),
+                        pitch: next(pitches)
+                    )
+    end
+
+
+
+                    </code>
+                    </pre>
+                    
+            </div>
+            
+        </div>
+</body>
+</html>

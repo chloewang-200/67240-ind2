@@ -49,6 +49,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             link.classList.add('selected-text');
         }
         // Highlight "home" link when not in the blogs section
+        else if (!isBlogPage && (currentPath === '/' || currentPath === '/index.html') && href === '/index.html') {
+            link.classList.add('selected-text');
+        }
         else if (!isBlogPage && currentPath.endsWith(href)) {
             link.classList.add('selected-text');
         }

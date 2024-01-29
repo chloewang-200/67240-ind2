@@ -9,13 +9,39 @@
     margin: 0;
     line-height: 1.5;
 }
+.centeredImage {
+    text-align: center; /* Centers the content of figure */
+    margin: auto; /* Optional: to center the figure block itself if it has a set width */
+}
+
+.centeredImage img {
+    display: block; /* Makes the image a block element */
+    margin: 0 auto; /* Centers the image within figure */
+}
+
+.centeredImage figcaption {
+    /* Style your caption here */
+    /* It's already below the image and centered due to the text-align of the parent element */
+    font-size: 13px;
+}
+
 .blogMidImage{
-    width: 100%;
+    width: 80%;
     margin: 30px auto;
     display: block;
     object-fit: cover;
     object-position: center;
 }
+
+.blogCaptionImage{
+    width: 80%;
+    margin: 30px auto;
+    margin-bottom: 0px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
 .blogLargeImage{
     width: 100%;
     margin: 40px auto;

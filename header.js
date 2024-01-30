@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const headerContent = `
     <div class="first">
         <!-- page title -->
-        <div class="pageTitle"><a href="/index.html">Chloe.</a></div>
+        <div class="pageTitle"><a href="index.html">Chloe.</a></div>
         <!-- page navigation -->
         <div class="headerContainer">
             <div class="headers">

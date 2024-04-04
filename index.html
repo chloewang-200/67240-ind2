@@ -9,6 +9,8 @@
     <link href="css/styles.css" type="text/css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Indie+Flower&family=Inter:wght@400;600&family=Josefin+Sans:wght@600&family=Josefin+Slab&family=Jost:wght@600&family=Londrina+Sketch&family=Marcellus&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/favicon.png?">
 </head>
@@ -19,7 +21,7 @@
         <div class="center-container">
             <img class = "meImg" src="images/me.png" />
             <img class = "meSmall" src="images/meSmall.png" />
-            <div class = openingText>
+            <div class = "openingText">
                 <div class = "hello"><span>👋 </span>Hi, I'm Chloe</span></div>
                 <div class = "intro">I like making <span id = "hoverOrange" class = "outlined">fun</span> things with 
                     <span id = "hoverRed" class = "outlined">art </span> and <span id = "hoverBlue" class = "outlined">technology</span>. My journey has taken me from
@@ -71,7 +73,7 @@
                 </div>
             </div> -->
             <div class = "coding">
-                <div class = "sectionHeader">Coding.</div>
+                <div id = "codingSection" class = "sectionHeader">Coding.</div>
                 <div class = "sectionIntro">I'm a Computer Science major, so here's some SWE experience...🫢</div>
                 <div class = "timeline">
                     <div class = timelineSection>
@@ -186,6 +188,21 @@
                 </div>
             </div>
             <button id="goUpButton" style="display: none;">Go Up</button>
+            <img src="images/chloebot.png" id="talkButton" alt="Click me" style="cursor: pointer;"/>
+        
+            <!-- Your React component file -->
+            <!-- <script type="text/babel" src="./components/chatbot.js" type="module"></script> -->
+            <script>
+            </script>
+            <div id="iframe-container" style ="display: none;" >
+                <button id="close-button">❌</button>
+                <iframe id="chatBox" src="https://chloewang-200.github.io/chloe-bot/"></iframe>
+            </div>
+            
+            <!-- <div id="chatBox" style="display: none;">
+
+            </div> -->
+
             <script src="/components/goUpButton.js"></script>
             <div class = "arts">
                 <div class = "sectionHeader">Arts.</div>
